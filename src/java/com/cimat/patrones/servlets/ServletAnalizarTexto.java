@@ -112,8 +112,10 @@ public class ServletAnalizarTexto extends HttpServlet {
                 
                 if(numPromotes > numInhibits){
                     r = "Yes";
-                } else {
+                } else if(numPromotes < numInhibits) {
                     r = "No";
+                } else {
+                    r = "unanswered";
                 }
                 
                 

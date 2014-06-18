@@ -12,9 +12,14 @@
 	Copyright (c) 2009-2012, Jayj.dk
 	All rights reserved.
 */
+.clearfixheader{
+  *zoom: 1;
+  text-align: center;
+}
 .clearfix {
   *zoom: 1;
 }
+
 .clearfix:before,
 .clearfix:after {
   display: table;
@@ -980,7 +985,7 @@ input[type="search"] {
   *width: 65.90425531263828%;
 }
 .row .span7 {
-  width: 57.446808505%;
+  width: inherit;
   *width: 57.3936170156383%;
 }
 .row .span6 {
@@ -1011,17 +1016,16 @@ input[type="search"] {
    Header
    ========================================================================== */
 #master-header {
-  padding: 40px;
   position: relative;
   z-index: 2;
 }
 #site-title {
-  float: left;
+  float: none;
 }
 #site-title a {
   color: #f6a828;
   display: inline-block;
-  font-size: 48px;
+  font-size: 28px;
   font-weight: 900;
   letter-spacing: -1px;
   text-shadow: 0 1px 0 #ffffff;
@@ -1030,6 +1034,7 @@ input[type="search"] {
   -ms-transition: all 200ms ease-in-out;
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  text-align: center;
 }
 #site-title a:hover {
   text-decoration: none;

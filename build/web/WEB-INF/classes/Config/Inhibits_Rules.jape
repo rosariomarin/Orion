@@ -43,17 +43,6 @@ Rule: inhibits_03
 -->  
 :inhi03.Inhibits_03  = {kind="Inhibits_03",rule = "Inhibits_03"}
 
-Rule: inhibits_04
-//Priority: 100
- (
-  ({Auxiliary})?
-  ({!Promotes})
-  {QualityAttribute}
-  {Keyword_Negative}
- ):inhi04 
--->  
-:inhi04.Inhibits_04  = {kind="Inhibits_04",rule = "Inhibits_04"}
-
 
 //Example 1: [which] [can] [have] a [negative impact] on the application’s overall [performance], [throughput], scalability, and availability
 //Example 1:  ,   [which] [can] [introduce] [performance] [penalties]

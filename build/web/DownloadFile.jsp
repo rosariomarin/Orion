@@ -1,9 +1,4 @@
-/*
-By : Sami & El-dib
-*/
-
-
-   
+  
 
 <%@ page  import="java.io.FileInputStream" %>
 <%@ page  import="java.io.BufferedInputStream"  %>

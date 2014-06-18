@@ -12,12 +12,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>${fileName}</title>
-       <link rel="stylesheet" href="css/ui-lightness/themes/ui-lightness/jquery-ui.css"> 
+        <meta charset="utf-8">
+        <title>Pattern Analizer</title>
+        <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/jquery-ui-1.10.4.custom.js"></script>
-        <link rel="stylesheet" href="css/lightness/themes/ui-lightness/jquery-ui.css">
+        <meta name="viewport" content="width=device-width">
+
+	<link href="style.css" rel="stylesheet">
+
+	<!-- Load Open Sans and Merriweather from Google Fonts
+		For optimal performance, customize it to load the styles you need:
+		http://goo.gl/QufgJ
+	-->
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Merriweather:400,700,900" rel="stylesheet">
+
+	<!-- All JavaScript at the bottom, except for Modernizr
+		Modernizr enables HTML5 elements & feature detects; It includes Respond, a polyfill for min/max-width CSS3 Media Queries
+		For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+	<script src="js/modernizr-2.6.1.min.js"></script>
+        
         <script>
             $(function() {
                 $( "#tabs" ).tabs();
@@ -26,7 +40,6 @@
         <style>
             body{
                 font: 62.5% "Trebuchet MS", sans-serif;
-                margin: 50px;
             }
             .demoHeaders {
                 margin-top: 2em;
@@ -34,6 +47,32 @@
         </style>
     </head>
     <body>
+        
+        <header id="master-header" class="clearfix" role="banner">
+
+		<hgroup>
+			<h1 id="site-title"><a href="#" title="Your Site Name">ORION</a></h1>      
+                        <h2><font color ="F6A828" size = 4>Pattern Analizer</font></h2>
+		</hgroup>
+
+	</header> <!-- #master-header -->
+        
+        <div id="main" class="row clearfix">
+            <!-- Main navigation -->
+	<nav class="main-navigation clearfix span12" role="navigation">
+		<h3 class="assistive-text">Main menu</h3>
+		<ul>
+			<li class="current"><a href="index.jsp">Home</a></li>
+                        <li ><a href="about.jsp">About the Project</a></li>
+                        <li ><a href="Contact.jsp">Contact</a></li>
+		</ul>
+	</nav> <!-- #main-navigation -->
+            
+        <div id="content" role="main" class="span7">    
+        
+        
+        
+        <h2>${fileName}</h2><br>
         <div id="tabs">
             <ul>
                 <li><a href="#tabs-1">Pattern</a></li>
@@ -57,6 +96,17 @@
         <br>
         <input type="button" value="Return" name="Back2" onclick="history.back()" />
 
-                    
+        </div> <!-- #content -->
+      </div> <!-- #main -->
+      <footer id="footer" role="contentinfo">
+		<!-- You're free to remove the credit link to Jayj.dk in the footer, but please, please leave it there :) -->
+		<p>
+			Copyright &copy; 2014 <a href="#">Cimat</a>
+			<span class="sep">|</span>
+			Author: <a href="#" title="Design by">I.S.C María del Rosario Marín Piña</a> 
+                        <span class="sep">|</span>
+                        version 1.0
+		</p>
+	</footer> <!-- #footer -->                      
     </body>
 </html>

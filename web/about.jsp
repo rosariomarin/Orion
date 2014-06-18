@@ -12,7 +12,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8">
-        <title>Orion</title>
+        <title>Pattern Analizer</title>
         <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
         <script src="js/jquery-1.10.2.js"></script>
         <script src="js/jquery-ui-1.10.4.custom.js"></script>
@@ -110,10 +110,10 @@
         </script>
         
         
+        
         <style>
             body{
                 font: 62.5% "Trebuchet MS", sans-serif;
-                margin: 50px;
             }
             .demoHeaders {
                 margin-top: 2em;
@@ -158,8 +158,8 @@
     <body>
         <header id="master-header" class="clearfix" role="banner">
 		<hgroup>
-			<h1 id="site-title"><a href="#" title="Your Site Name">Orion</a></h1>
-                        
+                    <h1 id="site-title"><a href="#" title="Your Site Name">ORION</a></h1>      
+                        <h2><font color ="F6A828" size = 4>Pattern Analizer</font></h2>
 		</hgroup>
 
 	</header> <!-- #master-header -->
@@ -170,13 +170,20 @@
 		<h3 class="assistive-text">Main menu</h3>
 		<ul>
 			<li ><a href="index.jsp">Home</a></li>
-			<li class="current"><a href="about.html">About</a></li>
+			<li class="current"><a href="about.jsp">About the Project</a></li>
+                        <li ><a href="Contact.jsp">Contact</a></li>
 		</ul>
 	</nav> <!-- #main-navigation -->
             
         <div id="content" role="main" class="span7">    
-            <h2>About</h2>
-        
+            <br>
+            <font SIZE=4 face="Open Sans"><p align="justify"> The overall objective of this project is to assist novice architects, 
+            specifically in the phase of definition of the architecture; developing a 
+            method and a tool focused on the design pattern analysis. The analysis was 
+            performed in order to answer the question whether certain pattern promotes 
+            a quality attribute. In this thesis decided to work with the attribute 
+            performance because it is an important quality attribute for practically 
+            any type of system.</p></font>
         
         
         </div> <!-- #content -->
@@ -186,7 +193,7 @@
 		<p>
 			Copyright &copy; 2014 <a href="#">Cimat</a>
 			<span class="sep">|</span>
-			Author: <a href="#" title="Design by">María del Rosario Marín Piña</a> 
+			Author: <a href="#" title="Design by">I.S.C María del Rosario Marín Piña</a> 
                         <span class="sep">|</span>
                         version 1.0
 		</p>
