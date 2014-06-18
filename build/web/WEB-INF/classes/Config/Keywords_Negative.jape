@@ -1,0 +1,9 @@
+Phase: Keywords_Negative
+Input:  Lookup  
+Options: control = appelt  
+ 
+Rule: keywords
+ ({Lookup.majorType == "KeywordNegative"} 
+):keyneg
+-->  
+:keyneg.Keyword_Negative = {kind="Keyword_Negative",rule = "Keyword_NegativeS"}

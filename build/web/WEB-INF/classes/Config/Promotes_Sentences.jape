@@ -1,0 +1,68 @@
+Phase: Promotes_Sentences
+Input:  Sentence Promotes_01 Promotes_02 Promotes_03 Promotes_04 Promotes_05
+Options: control = appelt 
+ 
+//Sentencias: Performance
+
+Rule: sentence_promotes_01
+ (
+   {Sentence contains Promotes_01} 
+ ):sen01 
+-->  
+:sen01.Sentence_Promotes_01 = {kind="Sentence_Promotes_01",rule = "Sentence_Promotes_01"}
+
+Rule: sentence_promotes_02
+ (
+   {Sentence contains Promotes_02} 
+ ):sen02
+-->  
+:sen02.Sentence_Promotes_02 = {kind="Sentence_Promotes_02",rule = "Sentence_Promotes_02"}
+
+Rule: sentence_promotes_03
+ (
+   {Sentence contains Promotes_03} 
+ ):sen03
+-->  
+:sen03.Sentence_Promotes_03 = {kind="Sentence_Promotes_03",rule = "Sentence_Promotes_03"}
+
+Rule: sentence_promotes_04
+ (
+   {Sentence contains Promotes_04} 
+ ):sen04
+-->  
+:sen04.Sentence_Promotes_04 = {kind="Sentence_Promotes_04",rule = "Sentence_Promotes_04"}
+
+Rule: sentence_promotes_05
+ (
+   {Sentence contains Promotes_05} 
+ ):sen05
+-->  
+:sen05.Sentence_Promotes_05 = {kind="Sentence_Promotes_05",rule = "Sentence_Promotes_05"}
+
+Rule: sentence_promotes_06
+ (
+   {Sentence contains Promotes_06} 
+ ):sen06
+-->  
+:sen06.Sentence_Promotes_06 = {kind="Sentence_Promotes_06",rule = "Sentence_Promotes_06"}
+
+Rule: sentence_promotes_07
+ (
+   {Sentence contains Promotes_07} 
+ ):sen07
+-->  
+:sen07.Sentence_Promotes_07 = {kind="Sentence_Promotes_07",rule = "Sentence_Promotes_07"}
+
+
+Rule: sentence_promotes_08
+ (
+   {Sentence contains Promotes_08} 
+ ):sen08
+-->  
+:sen08.Sentence_Promotes_08 = {kind="Sentence_Promotes_08",rule = "Sentence_Promotes_08"}
+
+
+
+
+
+

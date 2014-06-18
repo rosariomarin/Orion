@@ -1,0 +1,11 @@
+Phase: Inhibits
+Input:  Lookup  
+Options: control = appelt  
+
+//Esta lista en realidad debe ser tomada de wordNet
+
+Rule: inhibits
+ ({Lookup.majorType == "Inhibits"} 
+):ini
+-->  
+:ini.Inhibits = {kind="Inhibits",rule = "Inhibits"}

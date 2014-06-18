@@ -1,0 +1,9 @@
+Metrics.lst:Metrics
+QualityAttribute.lst:QualityAttribute
+Keywords_Positive.lst:KeywordPositive
+Keywords_Negative.lst:KeywordNegative
+Link.lst:link
+Promotes.lst:Promotes
+Inhibits.lst:Inhibits
+Tactics.lst:Tactic
+Factors.lst:Factor

@@ -1,0 +1,38 @@
+Phase: Auxiliary 
+Input:  Token 
+Options: control = appelt  
+
+Rule: auxiliary  
+ 
+ (
+	({Token.string =~ "[Ww]hich"}   //WDT 
+        ) |
+	({Token.string =~ "[Aa]ddition"}  
+        ) |
+	({Token.string =~ "[Aa]lso"}  
+        ) |
+	({Token.string =~ "[Mm]oreover"}  
+        ) |
+	({Token.string =~ "[Hh]owever"}  
+        ) |
+	({Token.string =~ "[Cc]onfiguration"}  
+        ) |
+	({Token.string =~ "[Ii]mplementation"}  //NN
+        ) |
+	({Token.string =~ "[Dd]esign"} //NN 
+        )|
+	({Token.string =~ "[Tt]here"}    
+        ) |
+	({Token.string =~ "[Mm]odel"}  //NN
+        ) |
+	({Token.string =~ "[Cc]an"}  //MD
+        ) |
+	({Token.string =~ "[Bb]ecause"}  //IN
+        )|
+	//so that
+	({Token.string =~ "[Ss]o"} 
+	  {Token.string =~ "[Tt]hat"} 
+     )
+):aux  
+-->  
+:aux.Auxiliary = {kind="Auxiliary",rule = "Auxiliary"}

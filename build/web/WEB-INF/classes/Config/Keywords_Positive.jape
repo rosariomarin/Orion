@@ -1,0 +1,9 @@
+Phase: Keywords_Positive
+Input:  Lookup  
+Options: control = appelt  
+ 
+Rule: keywords
+ ({Lookup.majorType == "KeywordPositive"} 
+):keypos
+-->  
+:keypos.Keyword_Positive = {kind="Keyword_Positive",rule = "Keyword_Positive"}

@@ -1,0 +1,11 @@
+Phase: Promotes
+Input:  Lookup  
+Options: control = appelt  
+
+//Esta lista en realidad debe ser tomada de wordNet
+
+Rule: promotes
+ ({Lookup.majorType == "Promotes"} 
+):prom 
+-->  
+:prom.Promotes = {kind="Promotes",rule = "Promotes"}

@@ -1,0 +1,181 @@
+Phase: Promotes_Rules
+Input:  Token Lookup QualityAttribute Keyword_Positive Keyword_Negative Auxiliary Promotes Inhibits
+
+
+//Expresiones para determinar que se promueve
+//el attributo calidad: Performance
+
+// Promotes rules
+
+//Example 1:  , which maximizes their individual operational performance
+//Example 2:  ,  which  increases  the performance and throughput
+//Example 3:  , can further increase system performance and throughput 
+Rule: promotes_01
+//Priority: 50
+ ( 
+  (
+	{Auxiliary}
+  )?
+  {Promotes}
+  (
+	{Token}
+  )[0,3]
+  {QualityAttribute}
+  (
+  ({Token})?
+  (
+  ({Keyword_Positive})|
+  ({Keyword_Negative})
+  )
+  )?  
+ ):prom01 
+-->  
+:prom01.Promotes_01 = {kind="Promotes_01",rule = "Promotes_01"}
+
+ 
+ //Example 1:  DOMAIN  OBJECT  implementation  enable  incremental  and  concurrent  data  processing
+ //Example 2:  support an incremental data processing approach
+Rule: promotes_02
+//Priority: 50
+ ( 
+  (
+	{Auxiliary}
+  )?
+  (
+  {Promotes}
+  )[1,2]  
+  ({Token})?
+  ({Token.kind==word, Token.category==IN, Token.orth==lowercase})?
+ (
+  {Keyword_Positive}
+  )[1,2]
+ ):prom02 
+-->  
+:prom02.Promotes_02 = {kind="Promotes_02",rule = "Promotes_02"}
+
+ //Example 1:  so that throughput is maximized
+Rule: promotes_03
+//Priority: 50
+ ( 
+  (
+	{Auxiliary}
+  )?
+ {Keyword_Positive}
+ ({Token})?
+ {Promotes}
+ ):prom03 
+-->  
+:prom03.Promotes_03 = {kind="Promotes_03",rule = "Promotes_03"}
+ 
+ 
+
+
+//Example 1:  must not become a performance bottleneck.
+Rule: promotes_04
+//Priority: 50
+ (
+  (
+	(({Token.string == "does"})|
+	({Token.string == "do"})|
+	({Token.string == "must"}))
+  ) 
+ {Token.string == "not"}
+ //Ojo con el become
+
+ (
+	{Token}
+  )[0,3]
+ (
+ {QualityAttribute}
+ )?
+ {Keyword_Negative}
+ ):prom04 
+-->  
+:prom04.Promotes_04 = {kind="Promotes_04",rule = "Promotes_04"}
+
+///////////NEGATION//////////// 
+//	POS (Part Of Speech) ////
+//  Podemos hacer esto con una macro
+//do not suffer -> VB VB VB
+//does not degrade -> VBZ RB NN
+//must not become -> MD RB VB
+///////////////////////
+
+//Example 1:  asynchronous service performance does not degrade due to blocking synchronous services
+Rule: promotes_05
+//Priority: 50
+ ( 
+ {QualityAttribute}
+ (
+	(({Token.string == "does"})|
+	({Token.string == "do"})|
+	({Token.string == "must"}))
+  )
+ {Token.string == "not"}
+ //{Token}
+ (({Token.kind==word, Token.category==NN, Token.orth==lowercase})|
+  ({Token.kind==word, Token.category==VB, Token.orth==lowercase})
+ )
+ ):prom05 
+-->  
+:prom05.Promotes_05 = {kind="Promotes_05",rule = "Promotes_05"}
+
+//Example 1:  LEADER/FOLLOWERS [design] [avoids] [the] [overhead]
+//Example 2:  not exchange data between themselves also [minimizes] the [overhead] 
+//Example 3:  the next follower [prevents] [performance] [bottlenecks]  
+//Example 4:  concurrency [model] that [avoids] the [overhead]
+//Example 5: nest monitor objects [without] risking [deadlock]
+//NO : ACTIVE OBJECT arrangement also introduces a heavyweight
+Rule: promotes_06
+//Priority: 50
+ ( 
+ (
+	{Auxiliary}
+  )?
+  (
+	{Token}
+  )[0,3]
+  {Promotes}
+   (
+	{Token}
+  )[0,3]
+  {Keyword_Negative}
+ ):prom06 
+-->  
+:prom06.Promotes_06 = {kind="Promotes_06",rule = "Promotes_06"}
+
+
+
+//monitor objects [without} [risking] [deadlock],
+Rule: promotes_07
+//Priority: 50
+ ( 
+ {Promotes}
+ {Inhibits}
+ {Keyword_Negative}
+ ):prom07
+-->  
+:prom07.Promotes_07 = {kind="Promotes_08",rule = "Promotes_07"}
+ 
+ 
+
+//Multiple processing threads [can] [handle] events [concurrently]
+
+// Example 1: In addition, synchronization complexity is reduced
+Rule: promotes_08
+//Priority: 50
+ ( 
+	(
+		({Auxiliary})
+		({Token.string == ","})?
+	)?
+ {Keyword_Positive}
+ {Inhibits}
+ ({Token})?
+ {Promotes}
+ ):prom08 
+-->  
+:prom08.Promotes_08 = {kind="Promotes_09",rule = "Promotes_08"}
+
+
+

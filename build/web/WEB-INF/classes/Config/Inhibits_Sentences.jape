@@ -1,0 +1,26 @@
+Phase: Inhibits_Sentences
+Input:  Sentence Inhibits_01
+Options: control = appelt 
+ 
+//Sentencias: Performance
+
+Rule: sentence_inhibits_01
+ (
+   {Sentence contains Inhibits_01} 
+ ):sen01 
+-->  
+:sen01.Sentence_Inhibits_01 = {kind="Sentence_Inhibits_01",rule = "Sentence_Inhibits_01"}
+
+Rule: sentence_inhibits_02
+ (
+   {Sentence contains Inhibits_02} 
+ ):sen02 
+-->  
+:sen02.Sentence_Inhibits_02 = {kind="Sentence_Inhibits_02",rule = "Sentence_Inhibits_02"}
+
+Rule: sentence_inhibits_03
+ (
+   {Sentence contains Inhibits_03} 
+ ):sen03 
+-->  
+:sen03.Sentence_Inhibits_03 = {kind="Sentence_Inhibits_03",rule = "Sentence_Inhibits_03"}

@@ -1,0 +1,11 @@
+Phase: QualityAttribute 
+Input:  Token SpaceToken  
+Options: control = appelt  
+ 
+Rule: Qualityattribute 
+ 
+( 
+{Token.string =~ "[Pp]erformance"}   
+):qa
+-->  
+:qa.QualityAttribute = {kind="QualityAttribute",rule = "QualityAttribute"}

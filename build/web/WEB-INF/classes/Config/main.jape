@@ -1,0 +1,20 @@
+// SplitMain
+// Valentin Tablan 17/05/2001
+
+
+//A sentence splitter
+MultiPhase:	main
+Phases: 
+
+Auxiliary 
+Keywords_Positive
+Keywords_Negative
+QualityAttribute
+Promotes 
+Inhibits
+Promotes_Rules
+Inhibits_Rules
+Promotes_Sentences
+Inhibits_Sentences
+
+

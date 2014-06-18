@@ -1,0 +1,57 @@
+Phase: Inhibits_Rules
+Input:  Token Lookup QualityAttribute Keyword_Positive Keyword_Negative Auxiliary Promotes Inhibits
+
+ 
+//Expresiones para determinar que se inhibe
+//el attributo calidad: Performance
+
+// Inhibits rules
+
+//Example: This, in turn, can lead both to loss of performance and to increased comp lexity in writing the filters themselves.
+Rule: inhibits_01
+//Priority: 100
+ ( 
+  ({Auxiliary})?
+  {Inhibits}
+  ({Token})?
+  {QualityAttribute}
+ ):inhi01 
+-->  
+:inhi01.Inhibits_01  = {kind="Inhibits_01",rule = "Inhibits_01"}
+
+//Example 1: Some methods of associating threads and event sources are inefﬁcient because they incur high levels of overhead.
+Rule: inhibits_02
+//Priority: 100
+ ( 
+  ({Auxiliary})?
+  {Inhibits}
+  ({Token})?
+  {Keyword_Negative}
+ ):inhi02 
+-->  
+:inhi02.Inhibits_02  = {kind="Inhibits_02",rule = "Inhibits_02"}
+
+//Example : Correspondingly fewer resources are available for other functionality in the application, which can have a negative impact on the application’s overall performance, throughput, scalability, and availability.
+Rule: inhibits_03
+//Priority: 100
+ ( 
+  ({Auxiliary})[0,2]
+  {Promotes}
+  ({Token})
+  {Inhibits}
+ ):inhi03 
+-->  
+:inhi03.Inhibits_03  = {kind="Inhibits_03",rule = "Inhibits_03"}
+
+
+//Example 1: [which] [can] [have] a [negative impact] on the application’s overall [performance], [throughput], scalability, and availability
+//Example 1:  ,   [which] [can] [introduce] [performance] [penalties]
+//Example 1: An ACTIVE OBJECT arrangement [also] [introduces] a [heavyweight]
+//Example 1:  ,   [which] [can] [introduce] [performance] [penalties]
+
+//Example 1: because they incur [high] levels of [overhead]
+//Example 1: An ACTIVE OBJECT arrangement also [introduces] a [heavyweight]
+
+
+
+
